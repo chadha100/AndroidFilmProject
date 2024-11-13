@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.premiere_application.HomeScreen
 import com.example.tp1application.data.viewmodel.ActorViewModel
+import com.example.tp1application.data.viewmodel.CollectionViewModel
 import com.example.tp1application.data.viewmodel.MovieViewModel
 import com.example.tp1application.data.viewmodel.SerieViewModel
 import com.example.tp1application.screen.*
@@ -60,6 +61,11 @@ fun RootNavigation(navController: NavHostController, windowClass: WindowSizeClas
                 viewModel = actorViewModel
             )
         }
+
+    composable("collections") {
+        val collectionViewModel: CollectionViewModel= viewModel()
+        CollectionsScreen(viewModel = collectionViewModel)
+    }
     }
 }
 
