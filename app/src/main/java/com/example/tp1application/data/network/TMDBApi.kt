@@ -1,6 +1,7 @@
 package com.example.tp1application.data.network
 import com.example.tp1application.model.ActorModel
 import com.example.tp1application.model.ActorResponse
+import com.example.tp1application.model.CollectionResponse
 import com.example.tp1application.model.MovieModel
 import com.example.tp1application.model.MovieResponse
 import com.example.tp1application.model.SerieModel
@@ -34,4 +35,7 @@ interface TMDBApi {
     suspend fun seriesKeyWord(@Query("api_key") apiKey: String,@Query("query") query: String): SerieResponse
     @GET ("tv/{id}")
     suspend fun serieInfo (@Path("id") id: String, @Query("api_key")apikey: String, @Query("append_to_response")append_to_response:String):SerieModel
+//collections
+@GET("trending/collection/week")
+suspend fun lastCollections(@Query("api_key")apikey: String,@Query("mot_cle")mot_cle: String) : CollectionResponse
 }
