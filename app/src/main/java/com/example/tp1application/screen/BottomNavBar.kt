@@ -4,6 +4,7 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material.icons.filled.Movie
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Tv
@@ -35,6 +36,14 @@ fun BottomNavBar(navController: NavController) {
             label = { Text("Acteurs") },
             selected = false,
             onClick = { navController.navigate("actors") },
+            selectedContentColor = Color.White,
+            unselectedContentColor = Color.LightGray
+        )
+        BottomNavigationItem(
+            icon = { Icon(Icons.Default.Image, contentDescription = "Collections") },
+            label = { Text("Collections") },
+            selected = false,
+            onClick = { navController.navigate("collections") },
             selectedContentColor = Color.White,
             unselectedContentColor = Color.LightGray
         )
