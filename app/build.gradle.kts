@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.androidx.tracing.perfetto.handshake)
     implementation(libs.play.services.base)
     implementation(libs.androidx.ui.test.android)
+    implementation(libs.places)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -104,13 +105,6 @@ dependencies {
     implementation("androidx.paging:paging-compose:3.3.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
-    val room_version = "2.6.1"
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    implementation ("androidx.room:room-ktx:$room_version")
-
-    // To use Kotlin annotation processing tool (kapt)
-    kapt("androidx.room:room-compiler:$room_version")
 
 
     testImplementation("junit:junit:4.13.2")
@@ -130,5 +124,6 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
     implementation("androidx.compose.material3:material3-window-size-class:1.0.1")
     implementation ("androidx.compose.material3:material3:1.1.0")
+    implementation("androidx.compose.material:material:1.0.0")
 }
 

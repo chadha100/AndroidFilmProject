@@ -1,6 +1,6 @@
 package com.example.tp1application.model
 data class MovieResponse(
-    val page: Int = 0,
+    val page: Int ?,
     val results: List<MovieModel> = listOf(),
     val total_pages: Int = 0,
     val total_results:Int=0
@@ -33,7 +33,8 @@ data class MovieModel(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int,
-    val media_type: String? = null
+    val media_type: String? = null,
+    val credits: Credits?
 )
 data class Genre(
     val id: Int,
@@ -53,4 +54,11 @@ data class SpokenLanguage(
     val english_name: String,
     val iso_639_1: String,
     val name: String
+)
+data class Actor(
+    val name: String,
+    val profile_path: String?
+)
+data class Credits(
+    val cast: List<Actor> // Liste des acteurs
 )
