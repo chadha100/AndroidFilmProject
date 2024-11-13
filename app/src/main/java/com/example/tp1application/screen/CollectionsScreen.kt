@@ -34,7 +34,6 @@ fun CollectionsScreen( viewModel: CollectionViewModel) {
     }
     val collections by viewModel.collections.collectAsState()
 
-    // Définir le fond mauve
     val backgroundColor = Color(0xFF8A2BE2)  // Couleur mauve
 
     Column(
@@ -47,6 +46,17 @@ fun CollectionsScreen( viewModel: CollectionViewModel) {
     ) {
         if (collections.isNotEmpty()) {
             val collection = collections.first() // récupérer la première série de la liste
+            val imageUrl = "https://image.tmdb.org/t/p/w500${collection.poster_path}"
+            Image(
+                painter = rememberImagePainter(imageUrl),
+                contentDescription = collection.name,
+                modifier = Modifier
+                    .size(200.dp)
+                    .padding(8.dp)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
 //titre
             Text(
                 text = collection.name ?: "Unknown Title",
@@ -54,7 +64,6 @@ fun CollectionsScreen( viewModel: CollectionViewModel) {
             )
 
             Spacer(modifier = Modifier.height(4.dp))
-
 
         }
     }
